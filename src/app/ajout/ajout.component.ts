@@ -10,15 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajout.component.css']
 })
 export class AjoutComponent implements OnInit {
-  Type: Type[] = [];
+  Type: any = [];
   
   medicament: Medicament = new Medicament();
   constructor(private ser: GestionService, private route: Router) { }
 
   ngOnInit(): void {
+    this.getType();
     
   }
- 
+ getType(){
+   this.ser.getALLType().subscribe(
+    (data) => {
+      this.Type = data;
+    
+    },
+    (err) => { console.log(err) }
+
+
+
+  )
+}
  
   savepfe(){
  

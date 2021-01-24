@@ -16,5 +16,7 @@ export class GestionService {
   {return this.http.post("http://127.0.0.1:8080/rest/addmedicament/",medicament)}
   getdetail(id:number)
   {return this.http.get("http://127.0.0.1:8080/rest/detail/"+id)}
+  getALLType()
+  {return this.http.get("http://127.0.0.1:8080/rest/all1/")}
 
 }
