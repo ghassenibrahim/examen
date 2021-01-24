@@ -1,0 +1,29 @@
+<div class="card card-header text-white bg-success">
+
+
+  <table class="table table-bordered">
+
+    <thead>
+
+      <tr class="table-active">
+        <th scope="col">ID</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Type</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let p of medicament ">
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.titre}}</td>
+        <td>{{p.type.titre}}</td>
+        <td><button (click)="delete(p.id)" class="btn btn-danger">Delete</button>
+          <button routerLink="/detail/{{p.id}}" class="btn btn-success">Detail</button>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>

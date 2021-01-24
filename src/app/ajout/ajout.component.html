@@ -1,0 +1,23 @@
+
+<form class="form-horizontal">
+    <div class="form-group">
+      
+        
+        Titre medicament: <input  class="form-control" type="text" name="titre" [(ngModel)]="medicament.titre">
+        
+        
+      
+        prix:    <input  class="form-control" type="text" name="titre" [(ngModel)]="medicament.prix">
+     
+    </div>
+
+    <div class="form-group">
+        <label for="selected" class="col-sm-9 control-label">Type PFE</label>
+        <select id="Selected" class="form-control" name="type" [(ngModel)]="medicament.type">
+           
+            <option *ngFor="let p of Type "  [ngValue]="p" >{{p.titre}}</option>
+          
+        </select>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)=savepfe()>Ajouter un PFE</button>
+</form>
